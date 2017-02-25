@@ -8,19 +8,6 @@ def nCr(n,r):
     f = math.factorial
     return f(n) / f(r) / f(n-r)
 
-def iid_tes(X,x2):
-	if len(X)==1:
-		return 0
-	else:
-		b=0
-		for x1 in X:
-			if (len(set(x1[0]) & set(x2[0]))==0) and (x1[1]+x2[1]==4):
-				b=x1
-				break
-			else:
-				b=0
-		return b
-
 class prior_prob():
 
 	def __init__(self, A):
@@ -43,14 +30,6 @@ class prior_prob():
 				if el not in old_guess:
 					self.all_prior[el]=0.0
 
-		for ans in self.element:
-			if ans not in old_guess:
-				if self.all_prior[ans]==-1:
-					self.all_prior[ans]=(1-(sum(answer)/4.0))*(1-(((nCr(4,sum(answer)))*(nCr(6,4-sum(answer))))/(float(nCr(10,4))-self.count)))
-				else:
-					self.all_prior[ans]=self.all_prior[ans]*(1-(sum(answer)/4.0))*(1-((nCr(4,sum(answer))*nCr(6,4-sum(answer)))/(float(nCr(10,4))-self.count)))
-
-
 		self.count+=1
 
 class poster_prob():
@@ -61,10 +40,8 @@ class poster_prob():
 		self.element = A.index.tolist()
 		self.bayes_matrix=np.ones([10,4])*-1.0
 		self.count=1
-		self.former_guess=[]
 
 	def update(self,answer,old_guess,prior):
-		self.former_guess.append((old_guess,sum(answer)))
 		self.prior_prob=prior
 		if sum(answer)==0:
 			#MassiveElimination
@@ -129,18 +106,7 @@ class poster_prob():
 		self.count+=1
 
 	def new_guess(self):
-		massive=0
-		if iid_tes(self.former_guess,self.former_guess[-1])!=0:
-			guess_1=iid_tes(self.former_guess,self.former_guess[-1])[0]
-			guess_2=self.former_guess[-1][0]
-			g=set(guess_1+guess_2)
-			A=list(permut(list(g),4))
-			self.all_poster=self.all_poster[A].fillna(0.0)
-			self.element=self.all_poster.index.tolist()
-			massive=1
-			print 'hooh'
-
-		if (-1.0 in self.prior_prob.values) and (massive==0):
+		if -1.0 in self.prior_prob.values:
 			never_been_guess=self.prior_prob[self.prior_prob==-1.0].index.tolist()
 			if len(never_been_guess)>=4:
 				nguess_list=list(permut(never_been_guess,4))
