@@ -4,6 +4,10 @@ import numpy as np
 from itertools import permutations as permut
 import random
 
+def data_val(pri,pos):
+
+	return 
+
 def nCr(n,r):
     f = math.factorial
     return f(n) / f(r) / f(n-r)
@@ -138,7 +142,6 @@ class poster_prob():
 			self.all_poster=self.all_poster[A].fillna(0.0)
 			self.element=self.all_poster.index.tolist()
 			massive=1
-			print 'hooh'
 
 		if (-1.0 in self.prior_prob.values) and (massive==0):
 			never_been_guess=self.prior_prob[self.prior_prob==-1.0].index.tolist()
@@ -149,8 +152,9 @@ class poster_prob():
 				have_been_guess=self.prior_prob[self.prior_prob!=-1.0].index.tolist()
 				nguess=list(random.choice(list(permut(never_been_guess,len(never_been_guess)))))+list(random.choice(list(permut(have_been_guess,4-len(never_been_guess)))))
 		else:
-			self.acc=max(self.all_poster.values)
-			nguess_list=self.all_poster[self.all_poster>=self.acc].index.tolist()
-			nguess=random.choice(nguess_list)
+			# self.acc=max(self.all_poster.values)
+			# nguess_list=self.all_poster[self.all_poster>=self.acc].index.tolist()
+			# nguess=random.choice(nguess_list)
+			dtp=data_val(self.prior_prob,self.all_poster)
 		# print len(self.all_poster.values)
 		return nguess
