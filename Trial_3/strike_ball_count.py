@@ -4,6 +4,8 @@ import numpy as np
 from main_machine import prior_prob, poster_prob
 import random
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 def answer_guess(pred,truen):
@@ -23,7 +25,7 @@ print "save 4 different number between 0-9"
 file_r = open('result_trial_3.txt','w')
 guess_numb=[]
 str_file=''
-for trials in range(50):
+for trials in range(1500):
 	Bt=list(permut([i+1 for i in range(9)],4))
 	true_one=random.choice(Bt)
 
@@ -86,5 +88,6 @@ print np.average(guess_numb)
 df=pd.DataFrame({'Avg_GN':guess_numb})
 
 fig, ax = plt.subplots()
-df.hist('Avg_GN', ax=ax,bins=40)
+df.hist('Avg_GN', ax=ax,bins=50)
+plt.title('average trial 3 :'+str(np.average(guess_numb))+'\nwith std :'+str(np.std(guess_numb)))
 fig.savefig('number_distribution_3.png')
