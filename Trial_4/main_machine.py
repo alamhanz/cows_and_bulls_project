@@ -7,7 +7,7 @@ import random
 def data_val(pri,pos,co):
 	dv=pd.DataFrame({'element':pos.index,'pos_prob':pos.values})
 	dv['pri_prob']=dv.element.apply(lambda x : np.product(pri[list(x)].values))	
-	# dv.to_csv('data_value_'+str(co)+'.csv')
+	dv.to_csv('data_value_'+str(co)+'.csv')
 	dv=dv[(dv.pri_prob>0.0) & (dv.pos_prob>0.0)]
 	mp=dv.pri_prob.mean()
 	st=dv.pri_prob.std()
@@ -15,13 +15,13 @@ def data_val(pri,pos,co):
 	st2=dv.pos_prob.std()
 	dv2=dv[(dv.pri_prob>0.0) & (dv.pos_prob>0.0)].element.values
 	if len(dv)>25 and st>0.0:
-		dv2=dv[dv.pri_prob<=mp+(0.3*st)].element.values
+		dv2=dv[dv.pri_prob<=mp].element.values
 	elif st2>0.0:
-		dv2=dv[dv.pos_prob>=mp2-(0.3*st)].element.values
-		# # print co
-		# print dv
-		# print mp2
-		# print dv.pos_prob>=mp2
+		dv2=dv[dv.pos_prob>=mp2].element.values
+		# print co
+		print dv
+		print mp2
+		print dv.pos_prob>=mp2
 
 	if len(dv2)==0:
 		dv2=dv[(dv.pri_prob>0.0) & (dv.pos_prob>0.0)].element.values

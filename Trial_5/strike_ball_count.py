@@ -20,10 +20,11 @@ def answer_guess(pred,truen):
 
 print "save 4 different number between 0-9"
 
-file_r = open('result_trial_3.txt','w')
+file_r = open('result_trial_5.txt','w')
 guess_numb=[]
 str_file=''
-for trials in range(50):
+for trials in range(1000):
+	failed=0
 	Bt=list(permut([i+1 for i in range(9)],4))
 	true_one=random.choice(Bt)
 
@@ -36,27 +37,29 @@ for trials in range(50):
 
 	print trials
 	str_file_2=''
+	str_file_2=str_file_2+'\nTrial '+str(trials)+' the problem is '+str(true_one)
 	while ans[0]!=4:
 		# print "---------------------"
 		# print "guess number ",gn
 		# print "---------------------"
-
 		
 		if sum(ans)==-1:
 			guess=random.choice(A)
+			str_file_2=str_file_2+'   \nguess_'+str(gn)+' '+str(guess)
 		else:
 			#new_scoring
 			prior_score.update(ans,guess)
 			score_board.update(ans,guess,prior_score.all_prior)
 
 			#another_guess
-			# try:
-			guess=score_board.new_guess()
-			# 	str_file_2=str_file_2+'   \nguess_'+str(gn)+' '+str(guess)
-			# except:
-			# 	str_file_2=str_file_2+'   \nguess_'+str(gn)+' FAILED'
-			# 	print 'FAILED'
-			# 	break
+			try:
+				guess=score_board.new_guess()
+				str_file_2=str_file_2+'   \nguess_'+str(gn)+' '+str(guess)
+			except:
+				str_file_2=str_file_2+'   \nguess_'+str(gn)+' FAILED'
+				failed=1
+				print 'FAILED'
+				break
 
 
 		# print prior_score.all_prior,'\n'
@@ -77,7 +80,8 @@ for trials in range(50):
 		str_file=str_file+str_file_2
 
 	
-
+	if failed==1:
+		break
 	print '-'*10
 file_r.write(str_file) 
 file_r.close() 
@@ -87,4 +91,4 @@ df=pd.DataFrame({'Avg_GN':guess_numb})
 
 fig, ax = plt.subplots()
 df.hist('Avg_GN', ax=ax,bins=40)
-fig.savefig('number_distribution_3.png')
+fig.savefig('number_distribution_5.png')
