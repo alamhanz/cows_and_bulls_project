@@ -15,10 +15,17 @@ def data_val(pri,pos,co):
 	st2=dv.pos_prob.std()
 	dv2=dv[(dv.pri_prob>0.0) & (dv.pos_prob>0.0)].element.values
 	if len(dv)>50 and st>0.0:
-		dv2=dv[dv.pri_prob<=mp].element.values
-
+		dv2=[]
+		z=0.1
+		while len(dv2)<3 and z<1.8:
+			dv2=dv[dv.pri_prob<=mp+(z*st)].element.values
+			z+=0.3
 	elif st2>0.0:
-		dv2=dv[dv.pos_prob>=mp2].element.values
+		dv2=[]	
+		z=0.1
+		while len(dv2)<3 and z<1.8:
+			dv2=dv[dv.pos_prob>=mp2-(z*st)].element.values
+			z+=0.3	
 		# print co
 		# print dv
 		# print mp2
@@ -82,16 +89,12 @@ class prior_prob():
 				if self.all_prior[ans]==-1:
 					self.all_prior[ans]=((4-sum(answer))/4.0)#*(0.6)*(0.5))/(1.0/len(self.all_prior[(self.all_prior>0) | (self.all_prior<0) ]))
 				else:
-					pr_p2=((4-sum(answer))/4.0)*(nCr(rest-1,3)/float(nCr(rest,4)))*(self.all_prior[ans])
-					pr_p1=pr_p2+((1-(pr_p2/self.all_prior[ans]))*(1-self.all_prior[ans]))
-					self.all_prior[ans]=pr_p2/pr_p1#/(1.0/len(self.all_prior[(self.all_prior>0) | (self.all_prior<0) ]))
+					self.all_prior[ans]=(((4-sum(answer))/4.0)*0.6*(self.all_prior[ans]))/(1-(nCr(rest-1,3)/float(nCr(rest,4))))#/(1.0/len(self.all_prior[(self.all_prior>0) | (self.all_prior<0) ]))
 			else:
 				if self.all_prior[ans]==-1:
 					self.all_prior[ans]=(sum(answer)/4.0)#*(0.4)*(0.5))/(1.0/len(self.all_prior[(self.all_prior>0) | (self.all_prior<0) ]))
 				else:
-					pr_p2=(sum(answer)/4.0)*(nCr(rest-1,3)/float(nCr(rest,4)))*(self.all_prior[ans])
-					pr_p1=pr_p2+((1-(pr_p2/self.all_prior[ans]))*(1-self.all_prior[ans]))
-					self.all_prior[ans]=pr_p2/pr_p1#/(1.0/len(self.all_prior[(self.all_prior>0) | (self.all_prior<0) ]))
+					self.all_prior[ans]=((sum(answer)/4.0)*0.4*(self.all_prior[ans]))/(nCr(rest-1,3)/float(nCr(rest,4)))#/(1.0/len(self.all_prior[(self.all_prior>0) | (self.all_prior<0) ]))
 
 		print len(self.all_prior[self.all_prior>0])
 		self.count+=1
@@ -139,24 +142,22 @@ class poster_prob():
 		#update_matrix
 		for el in old_guess:
 			if self.bayes_matrix[el,old_guess.index(el)]==-1.0:
-				#for 13 (if you want to know the diff between 12 and 13)
-				self.bayes_matrix[el,old_guess.index(el)]=(answer[0]/4.0)
+				self.bayes_matrix[el,old_guess.index(el)]=(self.prior_prob[el]*(answer[0]/4.0))
 				for place in set([0,1,2,3])-set([old_guess.index(el)]):
 					self.bayes_matrix[el,place]=(1-self.bayes_matrix[el,old_guess.index(el)])/3.0
 			else:
 				if self.bayes_matrix[el,old_guess.index(el)]==0.0:
 					self.bayes_matrix[el,old_guess.index(el)]=0.0
 				else:
-					prob_place=(self.bayes_matrix[el,old_guess.index(el)]*(answer[0]/4.0))+((1-self.bayes_matrix[el,old_guess.index(el)])*(1-(answer[0]/4.0)))
-					self.bayes_matrix[el,old_guess.index(el)]=((self.bayes_matrix[el,old_guess.index(el)]*(answer[0]/4.0))/prob_place)
+					prob_place=((self.prior_prob[el])*(self.bayes_matrix[el,old_guess.index(el)]))+((1-self.prior_prob[el])*(1-self.bayes_matrix[el,old_guess.index(el)]))
+					self.bayes_matrix[el,old_guess.index(el)]=((self.prior_prob[el]*(answer[0]/4.0))/prob_place)
 
 				for place in set([0,1,2,3])-set([old_guess.index(el)]):
 					if self.bayes_matrix[el,place]==0.0:
 						self.bayes_matrix[el,place]=0.0
 					else:	
-						o_place=(1-(answer[0]/4.0))/3.0
-						prob_place=(self.bayes_matrix[el,old_guess.index(el)]*(o_place))+((1-self.bayes_matrix[el,old_guess.index(el)])*(1-o_place))
-						self.bayes_matrix[el,place]=(self.bayes_matrix[el,old_guess.index(el)]*(o_place))/prob_place
+						prob_place=(self.prior_prob[el]*self.bayes_matrix[el,place])+((1-self.prior_prob[el])*(1-self.bayes_matrix[el,place]))
+						self.bayes_matrix[el,place]=((self.prior_prob[el]*((4-answer[0])/4.0))/prob_place)
 
 		#update_score
 		for comb in self.element:

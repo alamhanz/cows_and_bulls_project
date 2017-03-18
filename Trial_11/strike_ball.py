@@ -7,7 +7,7 @@ import random
 print "save 4 different number between 0-9"
 
 #All_Possible_Answer
-A=list(permut([i+1 for i in range(9)],4))
+A=list(permut([i for i in range(10)],4))
 gn=1
 prior_score=prior_prob(pd.Series([-1.0]*len([i for i in range(10)]),index=[i for i in range(10)]))
 score_board=poster_prob(pd.Series([-1.0]*len(A),index=A),prior=prior_score.all_prior)
@@ -30,6 +30,7 @@ while ans[0]!=4:
 
 	print prior_score.all_prior,'\n'
 	print score_board.bayes_matrix,'\n'
+	print 'rest : ',len(score_board.element)
 	print guess
 
 	A=score_board.element

@@ -1,0 +1,144 @@
+
+Trial 0 the problem is (3, 9, 5, 6) success with 11
+Trial 1 the problem is (6, 2, 4, 8) success with 13
+Trial 2 the problem is (4, 5, 3, 2) success with 11
+Trial 3 the problem is (6, 2, 4, 8) success with 11
+Trial 4 the problem is (8, 4, 2, 9) success with 7
+Trial 5 the problem is (7, 1, 2, 4) success with 14
+Trial 6 the problem is (2, 1, 4, 8) success with 10
+Trial 7 the problem is (5, 3, 1, 8) success with 9
+Trial 8 the problem is (7, 1, 6, 4) success with 13
+Trial 9 the problem is (1, 5, 9, 7) success with 22
+Trial 10 the problem is (5, 6, 8, 1) success with 7
+Trial 11 the problem is (2, 8, 4, 6) success with 9
+Trial 12 the problem is (9, 6, 4, 3) success with 8
+Trial 13 the problem is (9, 8, 4, 6) success with 15
+Trial 14 the problem is (8, 3, 9, 4) success with 9
+Trial 15 the problem is (9, 2, 4, 7) success with 14
+Trial 16 the problem is (4, 5, 6, 8) success with 17
+Trial 17 the problem is (6, 7, 1, 9) success with 14
+Trial 18 the problem is (2, 9, 4, 1) success with 14
+Trial 19 the problem is (2, 6, 4, 8) success with 15
+Trial 20 the problem is (5, 1, 2, 4) success with 12
+Trial 21 the problem is (3, 1, 9, 7) success with 27
+Trial 22 the problem is (7, 4, 6, 8) success with 17
+Trial 23 the problem is (6, 3, 8, 1) success with 16
+Trial 24 the problem is (7, 8, 5, 4) success with 17
+Trial 25 the problem is (7, 8, 2, 9) success with 12
+Trial 26 the problem is (6, 7, 1, 5) success with 13
+Trial 27 the problem is (2, 5, 9, 1) success with 14
+Trial 28 the problem is (7, 2, 6, 9) success with 13
+Trial 29 the problem is (7, 3, 4, 1) success with 20
+Trial 30 the problem is (6, 5, 8, 3) success with 14
+Trial 31 the problem is (7, 4, 6, 3) success with 20
+Trial 32 the problem is (2, 8, 6, 5) success with 5
+Trial 33 the problem is (7, 6, 8, 4) success with 9
+Trial 34 the problem is (7, 8, 5, 4) success with 15
+Trial 35 the problem is (3, 9, 7, 2) success with 14
+Trial 36 the problem is (1, 5, 4, 6) success with 15
+Trial 37 the problem is (5, 6, 3, 2) success with 11
+Trial 38 the problem is (7, 5, 3, 1) success with 15
+Trial 39 the problem is (8, 3, 7, 1) success with 13
+Trial 40 the problem is (4, 3, 6, 7) success with 4
+Trial 41 the problem is (5, 8, 6, 2) success with 14
+Trial 42 the problem is (1, 8, 2, 6) success with 13
+Trial 43 the problem is (1, 8, 5, 7) success with 19
+Trial 44 the problem is (8, 6, 1, 4) success with 16
+Trial 45 the problem is (6, 3, 2, 8) success with 20
+Trial 46 the problem is (7, 3, 2, 5) success with 6
+Trial 47 the problem is (9, 5, 8, 6) success with 17
+Trial 48 the problem is (3, 9, 5, 4) success with 16
+Trial 49 the problem is (8, 2, 9, 3) success with 2
+Trial 50 the problem is (4, 6, 7, 9) success with 11
+Trial 51 the problem is (2, 9, 8, 5) success with 17
+Trial 52 the problem is (8, 3, 2, 5) success with 13
+Trial 53 the problem is (8, 5, 2, 9) success with 16
+Trial 54 the problem is (8, 2, 5, 6) success with 9
+Trial 55 the problem is (1, 7, 8, 4) success with 10
+Trial 56 the problem is (7, 9, 6, 4) success with 16
+Trial 57 the problem is (3, 1, 5, 4) success with 13
+Trial 58 the problem is (5, 9, 6, 4) success with 20
+Trial 59 the problem is (3, 7, 9, 5) success with 15
+Trial 60 the problem is (9, 8, 3, 2) success with 12
+Trial 61 the problem is (7, 9, 1, 2) success with 13
+Trial 62 the problem is (6, 4, 7, 3) success with 13
+Trial 63 the problem is (1, 9, 3, 6) success with 9
+Trial 64 the problem is (8, 4, 2, 3) success with 14
+Trial 65 the problem is (5, 3, 4, 6) success with 7
+Trial 66 the problem is (3, 7, 4, 1) success with 16
+Trial 67 the problem is (2, 3, 9, 5) success with 13
+Trial 68 the problem is (8, 3, 4, 2) success with 9
+Trial 69 the problem is (2, 4, 9, 3) success with 13
+Trial 70 the problem is (4, 6, 9, 2) success with 16
+Trial 71 the problem is (1, 8, 3, 6) success with 18
+Trial 72 the problem is (2, 1, 9, 8) success with 8
+Trial 73 the problem is (8, 9, 5, 1) success with 11
+Trial 74 the problem is (7, 4, 3, 9) success with 11
+Trial 75 the problem is (6, 3, 9, 8) success with 9
+Trial 76 the problem is (3, 5, 2, 9) success with 19
+Trial 77 the problem is (8, 5, 9, 6) success with 11
+Trial 78 the problem is (7, 1, 8, 5) success with 11
+Trial 79 the problem is (2, 6, 8, 9) success with 9
+Trial 80 the problem is (9, 1, 2, 5) success with 11
+Trial 81 the problem is (1, 7, 3, 4) success with 6
+Trial 82 the problem is (2, 8, 5, 7) success with 17
+Trial 83 the problem is (7, 9, 2, 4) success with 20
+Trial 84 the problem is (9, 4, 7, 3) success with 15
+Trial 85 the problem is (7, 5, 3, 9) success with 8
+Trial 86 the problem is (3, 9, 5, 4) success with 13
+Trial 87 the problem is (2, 6, 8, 5) success with 14
+Trial 88 the problem is (6, 4, 9, 5) success with 13
+Trial 89 the problem is (8, 6, 5, 4) success with 17
+Trial 90 the problem is (2, 5, 4, 8) success with 19
+Trial 91 the problem is (9, 8, 6, 4) success with 8
+Trial 92 the problem is (7, 3, 5, 4) success with 8
+Trial 93 the problem is (8, 9, 2, 1) success with 13
+Trial 94 the problem is (6, 3, 4, 1) success with 14
+Trial 95 the problem is (1, 8, 2, 6) success with 15
+Trial 96 the problem is (1, 6, 5, 2) success with 12
+Trial 97 the problem is (1, 9, 5, 6) success with 13
+Trial 98 the problem is (4, 6, 9, 7) success with 14
+Trial 99 the problem is (6, 5, 9, 8) success with 10
+Trial 100 the problem is (8, 2, 4, 7) success with 14
+Trial 101 the problem is (6, 3, 5, 1) success with 9
+Trial 102 the problem is (2, 9, 7, 8) success with 10
+Trial 103 the problem is (9, 5, 7, 1) success with 12
+Trial 104 the problem is (8, 4, 3, 1) success with 15
+Trial 105 the problem is (6, 2, 7, 3) success with 21
+Trial 106 the problem is (5, 2, 4, 3) success with 10
+Trial 107 the problem is (5, 6, 4, 3) success with 10
+Trial 108 the problem is (3, 6, 2, 1) success with 13
+Trial 109 the problem is (7, 6, 9, 1) success with 14
+Trial 110 the problem is (4, 3, 2, 6) success with 9
+Trial 111 the problem is (5, 9, 6, 3) success with 18
+Trial 112 the problem is (6, 4, 3, 5) success with 16
+Trial 113 the problem is (9, 6, 8, 1) success with 15
+Trial 114 the problem is (8, 4, 9, 3) success with 12
+Trial 115 the problem is (7, 6, 2, 8) success with 19
+Trial Error :
+
+Trial 116 the problem is (3, 9, 8, 7)   
+guess_1 (7, 3, 5, 9)   
+guess_2 (4, 8, 2, 1)   
+guess_3 (8, 7, 3, 2)   
+guess_4 (3, 5, 8, 4)   
+guess_5 (1, 4, 7, 8)   
+guess_6 (5, 1, 9, 3)   
+guess_7 (3, 2, 4, 7)   
+guess_8 (3, 9, 8, 5)   
+guess_9 (2, 9, 1, 5)   
+guess_10 (3, 9, 4, 5)   
+guess_11 (3, 9, 8, 4)   
+guess_12 (3, 2, 8, 5)   
+guess_13 (3, 9, 1, 4)   
+guess_14 (3, 2, 8, 4)   
+guess_15 (9, 2, 8, 5)   
+guess_16 (3, 5, 1, 4)   
+guess_17 (9, 5, 8, 4)   
+guess_18 (2, 9, 8, 4)   
+guess_19 (3, 2, 1, 5)   
+guess_20 (2, 5, 8, 4)   
+guess_21 (9, 2, 4, 5)   
+guess_22 (2, 9, 1, 4)   
+guess_23 (2, 5, 1, 4)   
+guess_24 FAILED
