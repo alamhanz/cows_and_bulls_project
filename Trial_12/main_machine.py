@@ -82,7 +82,7 @@ class prior_prob():
 				if self.all_prior[ans]==-1:
 					self.all_prior[ans]=((4-sum(answer))/4.0)#*(0.6)*(0.5))/(1.0/len(self.all_prior[(self.all_prior>0) | (self.all_prior<0) ]))
 				else:
-					pr_p2=((4-sum(answer))/4.0)*(nCr(rest-1,3)/float(nCr(rest,4)))*(self.all_prior[ans])
+					pr_p2=((4-sum(answer))/4.0)*(1-((nCr(rest-1,3)/float(nCr(rest,4)))))*(self.all_prior[ans])
 					pr_p1=pr_p2+((1-(pr_p2/self.all_prior[ans]))*(1-self.all_prior[ans]))
 					self.all_prior[ans]=pr_p2/pr_p1#/(1.0/len(self.all_prior[(self.all_prior>0) | (self.all_prior<0) ]))
 			else:

@@ -82,12 +82,12 @@ class prior_prob():
 				if self.all_prior[ans]==-1:
 					self.all_prior[ans]=((4-sum(answer))/4.0)#*(0.6)*(0.5))/(1.0/len(self.all_prior[(self.all_prior>0) | (self.all_prior<0) ]))
 				else:
-					self.all_prior[ans]=(((4-sum(answer))/4.0)*0.6*(self.all_prior[ans]))/(1-(nCr(rest-1,3)/float(nCr(rest,4))))#/(1.0/len(self.all_prior[(self.all_prior>0) | (self.all_prior<0) ]))
+					self.all_prior[ans]=(((4-sum(answer))/4.0)*(1-(nCr(rest-1,3)/float(nCr(rest,4))))*(self.all_prior[ans]))/0.6#/(1.0/len(self.all_prior[(self.all_prior>0) | (self.all_prior<0) ]))
 			else:
 				if self.all_prior[ans]==-1:
 					self.all_prior[ans]=(sum(answer)/4.0)#*(0.4)*(0.5))/(1.0/len(self.all_prior[(self.all_prior>0) | (self.all_prior<0) ]))
 				else:
-					self.all_prior[ans]=((sum(answer)/4.0)*0.4*(self.all_prior[ans]))/(nCr(rest-1,3)/float(nCr(rest,4)))#/(1.0/len(self.all_prior[(self.all_prior>0) | (self.all_prior<0) ]))
+					self.all_prior[ans]=((sum(answer)/4.0)*(nCr(rest-1,3)/float(nCr(rest,4)))*(self.all_prior[ans]))/0.4#/(1.0/len(self.all_prior[(self.all_prior>0) | (self.all_prior<0) ]))
 
 		print len(self.all_prior[self.all_prior>0])
 		self.count+=1
