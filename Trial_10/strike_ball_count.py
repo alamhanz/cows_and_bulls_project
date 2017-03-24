@@ -25,7 +25,7 @@ print "save 4 different number between 0-9"
 file_r = open('result_trial_10.txt','w')
 guess_numb=[]
 str_file=''
-for trials in range(500):
+for trials in range(2000):
 	failed=0
 	Bt=list(permut([i+1 for i in range(9)],4))
 	true_one=random.choice(Bt)
