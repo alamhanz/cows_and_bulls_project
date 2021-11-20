@@ -8,7 +8,7 @@ def bplot(params,axes = None, size = 1000):
     if axes is None :
         g1 = sns.distplot(sample)
     else:
-        g1 = sns.distplot(sample, ax = axes)
+        g1 = sns.histplot(sample, ax = axes)
     g1.set(ylabel=None)
 
     
@@ -31,9 +31,25 @@ class distpar:
         for i in range(self.n_params):
             self.slots[i+1] = (2,2)
 
-    def bshows(self,param_id):
+    def bshows(self):
         bplot_all(self.slots)
 
-    def bupdate(self):
-        self.slots = self.slots
+    def update_beta(self,par,towards,steps = 1):
+        if towards:
+            a = self.slots[par][0]
+            b = self.slots[par][1] + steps
+        else:
+            a = self.slots[par][0] + steps
+            b = self.slots[par][1]
+        self.slots[par] = (a,b)
+
+    def update_slots(self,guess):
+        ## update guess
+        self.update_beta(guess,towards = True)
+        
+        ## update others
+        for p in self.slots:
+            if p!=guess:
+                self.update_beta(p,towards = False) ## Kalo udah diupdate.. masa di update balik
+
 
