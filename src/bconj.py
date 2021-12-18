@@ -82,4 +82,4 @@ class distpar:
 ## the towards true steps really impacting the towards false steps in the end (must have large steps towards false if its really impossible)
 ## Lbound is a lower bound value where the number beta is not update anymore
 ## Lbound_pos is a lower bound to become possible number
-## steps is depend on digits and on which stage
+## steps is depend on digits, on which stage, and number of correct bull
